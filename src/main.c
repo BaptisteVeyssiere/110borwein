@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 **
 ** Started on  Mon Apr  4 13:28:30 2016 Baptiste veyssiere
-** Last update Thu Apr 14 12:15:54 2016 nathan scutari
+** Last update Thu Apr 14 12:43:28 2016 nathan scutari
 */
 
 #include <stdio.h>
@@ -28,7 +28,10 @@ int	syntax_check(char *str)
       nbr++;
     }
   if (nbr == 0)
-    return (1);
+    {
+      printf("Error : argument must be a positive integer\n");
+      return (1);
+    }
   return (0);
 }
 
