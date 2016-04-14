@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 **
 ** Started on  Mon Apr  4 13:28:30 2016 Baptiste veyssiere
-** Last update Thu Apr 14 10:39:24 2016 nathan scutari
+** Last update Thu Apr 14 12:05:44 2016 nathan scutari
 */
 
 #include <stdio.h>
@@ -13,15 +13,22 @@
 
 int	syntax_check(char *str)
 {
+  int	nbr;
   int	i;
 
+  nbr = 0;
   i = -1;
   while (str[++i] != 0)
-    if (str[i] < '0' || str[i] > '9')
-      {
-	printf("Error : argument must be a positive integer\n");
-	return (1);
-      }
+    {
+      if (str[i] < '0' || str[i] > '9')
+	{
+	  printf("Error : argument must be a positive integer\n");
+	  return (1);
+	}
+      nbr++;
+    }
+  if (nbr == 0)
+    return (1);
   return (0);
 }
 

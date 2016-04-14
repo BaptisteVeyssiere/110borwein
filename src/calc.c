@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 **
 ** Started on  Mon Apr  4 13:27:39 2016 Baptiste veyssiere
-** Last update Mon Apr  4 14:33:25 2016 Baptiste veyssiere
+** Last update Thu Apr 14 12:12:05 2016 nathan scutari
 */
 
 #include <math.h>
@@ -25,8 +25,8 @@ double	F(double x)
 double  Fn(double x, int n)
 {
   double        sinus;
-  float		k;
-  float		FN;
+  double	k;
+  double	FN;
 
   if (x == 0)
       sinus = 1;
@@ -67,7 +67,7 @@ void	calc_pos(int n)
   REC = 0.5 * (REC + 1);
   TRA = 0.25 * (TRA + 1 + A);
   SIM = 0.5 / 6 * (SIM + 1 + A + 4 * B);
-  printf("Rectangles:\n10 = %.10f\ndiff = %.10f\n\nTrapezoids:\n10 = %.10f\ndiff = %.10f\n\nSimpson:\n10 = %.10f\ndiff = %.10f\n", REC, REC - M_PI / 2, TRA, TRA - M_PI / 2, SIM, SIM - M_PI / 2);
+  printf("Rectangles:\nI%d = %.10f\ndiff = %.10f\n\nTrapezoids:\nI%d = %.10f\ndiff = %.10f\n\nSimpson:\nI%d = %.10f\ndiff = %.10f\n", n,  REC, REC - M_PI / 2, n, TRA, TRA - M_PI / 2, n, SIM, SIM - M_PI / 2);
 }
 
 void	calc(int n)
@@ -100,6 +100,6 @@ void	calc(int n)
       REC = 0.5 * (REC + 1);
       TRA = 0.25 * (TRA + 1 + A);
       SIM = 0.5 / 6 * (SIM + 1 + A + 4 * B);
-      printf("Rectangles:\n10 = %.10f\ndiff = %.10f\n\nTrapezoids:\n10 = %.10f\ndiff = %.10f\n\nSimpson:\n10 = %.10f\ndiff = %.10f\n", REC, REC - M_PI / 2, TRA, TRA - M_PI / 2, SIM, SIM - M_PI / 2);
+      printf("Rectangles:\nI%d = %.10f\ndiff = %.10f\n\nTrapezoids:\nI%d = %.10f\ndiff = %.10f\n\nSimpson:\nI%d = %.10f\ndiff = %.10f\n", n, REC, REC - M_PI / 2, n, TRA, TRA - M_PI / 2, n, SIM, SIM - M_PI / 2);
     }
 }
