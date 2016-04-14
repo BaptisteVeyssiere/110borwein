@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 **
 ** Started on  Mon Apr  4 13:27:39 2016 Baptiste veyssiere
-** Last update Thu Apr 14 12:12:05 2016 nathan scutari
+** Last update Thu Apr 14 12:32:41 2016 nathan scutari
 */
 
 #include <math.h>
@@ -67,7 +67,21 @@ void	calc_pos(int n)
   REC = 0.5 * (REC + 1);
   TRA = 0.25 * (TRA + 1 + A);
   SIM = 0.5 / 6 * (SIM + 1 + A + 4 * B);
-  printf("Rectangles:\nI%d = %.10f\ndiff = %.10f\n\nTrapezoids:\nI%d = %.10f\ndiff = %.10f\n\nSimpson:\nI%d = %.10f\ndiff = %.10f\n", n,  REC, REC - M_PI / 2, n, TRA, TRA - M_PI / 2, n, SIM, SIM - M_PI / 2);
+  printf("Rectangles:\nI%d = %.10f\ndiff = ", n, REC);
+  if (REC - M_PI / 2 < 0 && REC - M_PI / 2 > -0.0000000001)
+    printf("0.0000000000\n");
+  else
+    printf("%.10f\n", REC - M_PI / 2);
+  printf("\nTrapezoids:\nI%d = %.10f\ndiff = ", n, TRA);
+  if (TRA - M_PI / 2 < 0 && TRA - M_PI / 2 > -0.00000000001)
+    printf("0.0000000000\n");
+  else
+    printf("%.10f\n", TRA - M_PI / 2);
+  printf("\nSimpson:\nI%d = %.10f\ndiff = ", n, SIM);
+  if (SIM - M_PI / 2 < 0 && SIM - M_PI / 2 > -0.00000000001)
+    printf("0.0000000000\n");
+  else
+    printf("%.10f\n", SIM - M_PI / 2);
 }
 
 void	calc(int n)
@@ -100,6 +114,20 @@ void	calc(int n)
       REC = 0.5 * (REC + 1);
       TRA = 0.25 * (TRA + 1 + A);
       SIM = 0.5 / 6 * (SIM + 1 + A + 4 * B);
-      printf("Rectangles:\nI%d = %.10f\ndiff = %.10f\n\nTrapezoids:\nI%d = %.10f\ndiff = %.10f\n\nSimpson:\nI%d = %.10f\ndiff = %.10f\n", n, REC, REC - M_PI / 2, n, TRA, TRA - M_PI / 2, n, SIM, SIM - M_PI / 2);
+      printf("Rectangles:\nI%d = %.10f\ndiff = ", n, REC);
+      if (REC - M_PI / 2 < 0 && REC - M_PI / 2 > -0.00000000001)
+	printf("0.0000000000\n");
+      else
+	printf("%.10f\n", REC - M_PI / 2);
+      printf("\nTrapezoids:\nI%d = %.10f\ndiff = ", n, TRA);
+      if (TRA - M_PI / 2 < 0 && TRA - M_PI / 2 > -0.00000000001)
+	printf("0.0000000000\n");
+      else
+	printf("%.10f\n", TRA - M_PI / 2);
+      printf("\nSimpson:\nI%d = %.10f\ndiff = ", n, SIM);
+      if (SIM - M_PI / 2 < 0 && SIM - M_PI / 2 > -0.00000000001)
+	printf("0.0000000000\n");
+      else
+	printf("%.10f\n", SIM - M_PI / 2);
     }
 }
